@@ -1,4 +1,3 @@
-# casos/viga_biapoiada_concentrada.py
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -15,15 +14,20 @@ def resolver_viga_biapoiada(L, P):
     M = np.piecewise(x, [x < a, x >= a], [lambda x: RA * x, lambda x: RA * x - P * (x - a)])
     N = np.zeros_like(x)
 
-    fig, axs = plt.subplots(4, 1, figsize=(10, 10), gridspec_kw={'height_ratios': [1, 3, 3, 3]}, sharex=True)
+    fig, axs = plt.subplots(4, 1, figsize=(10, 10),
+                            gridspec_kw={'height_ratios': [1, 3, 3, 3]}, sharex=True)
 
     # --- Viga com carga ---
     ax_viga = axs[0]
     ax_viga.plot([0, L], [0, 0], color='black', linewidth=4)
-    ax_viga.annotate('', xy=(a, -1), xytext=(a, -0.1),
-                 arrowprops=dict(facecolor='blue', width=7, headwidth=20, headlength=15))
-    ax_viga.text(a, -1.3, f'P = {P:.1f} N', ha='center', fontsize=11)
 
+    # Direção da seta e posição do texto
+    seta_altura = -1.0 * np.sign(P)
+    texto_altura = -1.3 * np.sign(P)
+
+    ax_viga.annotate('', xy=(a, seta_altura), xytext=(a, 0.1 * np.sign(P)),
+                     arrowprops=dict(facecolor='blue', width=7, headwidth=20, headlength=15))
+    ax_viga.text(a, texto_altura, f'P = {P:.1f} N', ha='center', fontsize=11)
 
     # Apoios: simples (círculo) e duplo (triângulo)
     ax_viga.plot(0, 0, marker='o', markersize=8, color='gray')
@@ -70,5 +74,4 @@ def resolver_viga_biapoiada(L, P):
 
     axs[3].set_xlabel("Posição x (m)")
     plt.tight_layout()
-    plt.tight_layout()
-    st.pyplot(fig) 
+    st.pyplot(fig)
