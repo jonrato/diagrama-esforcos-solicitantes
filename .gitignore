@@ -1,0 +1,28 @@
+# Ambiente virtual
+.venv/
+venv/
+ENV/
+env/
+
+# Bytecode Python
+__pycache__/
+*.py[cod]
+
+# Arquivos temporários e caches
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Arquivos do Jupyter (caso use)
+.ipynb_checkpoints/
+
+# Arquivos criados pelo matplotlib ou outros
+*.png
+*.pdf
+*.svg
+
+# Configs locais
+*.env
+*.idea/
+.vscode/
