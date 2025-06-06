@@ -1,39 +1,4 @@
-# # main.py
 
-# def main():
-#     print("Escolha o cenário para gerar os diagramas NVM:")
-#     print("1 - Viga em balanço com carga concentrada na extremidade")
-#     print("2 - Viga biapoiada com carga concentrada no meio")
-#     print("3 - Viga biapoiada com carga distribuída uniforme")
-#     print("4 - Viga engastada com carga triangular crescente")
-
-#     opcao = input("Digite o número do cenário desejado: ")
-
-#     if opcao == "1":
-#         from casos.viga_balcao_concentrada import resolver_viga_balcao
-#         resolver_viga_balcao()
-#     elif opcao == "2":
-#         from casos.viga_biapoiada_concentrada import resolver_viga_biapoiada
-#         resolver_viga_biapoiada()
-#     elif opcao == "3":
-#         from casos.viga_biapoiada_distribuida import resolver_viga_biapoiada_distribuida
-#         resolver_viga_biapoiada_distribuida()
-#     elif opcao == "4":
-#         from casos.viga_engastada_triangulo import resolver_viga_engastada_triangulo
-#         resolver_viga_engastada_triangulo()
-
-
-
-#     else:
-#         print("Opção inválida ou não implementada ainda.")
-
-
-
-
-# if __name__ == "__main__":
-#     main()
-
-# app.py
 import streamlit as st
 from casos import (
     viga_balcao_concentrada,
