@@ -32,13 +32,13 @@ source .venv/bin/activate   # Linux/Mac
 
 pip install -r requirements.txt
 
-streamlit run app.py
+streamlit run main.py
 ```
 
 ## 📦 Estrutura do Projeto
 ```
 .
-├── app.py                   # Interface principal em Streamlit
+├── main.py                   # Interface principal em Streamlit
 ├── casos/                  # Códigos de cada cenário
 │   ├── viga_balcao_concentrada.py
 │   ├── viga_biapoiada_concentrada.py
