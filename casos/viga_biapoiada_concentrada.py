@@ -20,9 +20,10 @@ def resolver_viga_biapoiada(L, P):
     # --- Viga com carga ---
     ax_viga = axs[0]
     ax_viga.plot([0, L], [0, 0], color='black', linewidth=4)
-    ax_viga.annotate('', xy=(a, 1), xytext=(a, 0.1),
-                     arrowprops=dict(facecolor='blue', width=7, headwidth=20, headlength=15))
-    ax_viga.text(a, 1.3, f'P = {P:.1f} N', ha='center', fontsize=11)
+    ax_viga.annotate('', xy=(a, -1), xytext=(a, -0.1),
+                 arrowprops=dict(facecolor='blue', width=7, headwidth=20, headlength=15))
+    ax_viga.text(a, -1.3, f'P = {P:.1f} N', ha='center', fontsize=11)
+
 
     # Apoios: simples (círculo) e duplo (triângulo)
     ax_viga.plot(0, 0, marker='o', markersize=8, color='gray')
